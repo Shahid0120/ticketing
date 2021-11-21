@@ -3,6 +3,7 @@ import "express-async-errors";
 import { json } from "body-parser";
 import mongoose from "mongoose";
 import cookieSession from "cookie-session";
+import jwt from "jsonwebtoken";
 import { currentUserRouter } from "./routes/current-user";
 import { signinRouter } from "./routes/signin";
 import { signoutRouter } from "./routes/signout";
@@ -38,6 +39,7 @@ const start = async () => {
   app.listen(3000, () => {
     console.log("listening on port 3000...");
   });
+
 };
 
 start();
