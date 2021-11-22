@@ -8,8 +8,8 @@ import { currentUserRouter } from "./routes/current-user";
 import { signinRouter } from "./routes/signin";
 import { signoutRouter } from "./routes/signout";
 import { signupRouter } from "./routes/signup";
-import { errorHandler } from "../middewares/error-handlers";
-import { NotFoundErorr } from "./erros/not-found-error";
+import { errorHandler } from "./middlewares/error-handlers";
+import { NotFoundErorr } from "./errors/not-found-error";
 const app = express();
 
 app.use(json());
