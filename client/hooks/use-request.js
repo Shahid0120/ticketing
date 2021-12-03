@@ -1,13 +1,17 @@
 import axios from "axios";
 import { useState } from "react";
 
-export default ({ url, method, body }) => {
+export default ({ url, method, body, onSucess }) => {
   // metthod refers to type of request ? is it post/get
   const [errors, setErrors] = useState(null);
   const doRequest = async () => {
     try {
       setErrors(null);
       const response = await axios[method](url, body);
+
+      if (onSucess) {
+        onSucess(response.data);
+      }
       return response.data;
     } catch (err) {
       setErrors(
